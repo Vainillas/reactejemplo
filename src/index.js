@@ -5,6 +5,7 @@ import Estudiante from "./Estudiante";
 import reportWebVitals from "./reportWebVitals";
 import ListarEstudiantes from "./ListarEstudiantes";
 import ListarMaterias from "./ListarMaterias";
+import CrearEstudiante from "./CrearEstudiante";
 
 let info = {
   nombre: "Mateo",
@@ -25,6 +26,7 @@ ReactDOM.render(
     <Estudiante estudiante={info}></Estudiante>
     <ListarMaterias />
     <ListarEstudiantes></ListarEstudiantes>
+    <CrearEstudiante />
   </React.StrictMode>,
   document.getElementById("root")
 );
