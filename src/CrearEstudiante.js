@@ -13,10 +13,10 @@ export default class CrearEstudiante extends Component {
         edad: "",
         numeroLegajo: "",
         carrera: "",
-        materia: "",
+        materias: [],
       },
       resultado: "",
-      materias: [],
+      materiasBox: [],
     };
   }
   handleChange(e) {
@@ -40,7 +40,7 @@ export default class CrearEstudiante extends Component {
         edad: this.state.form.edad,
         numeroLegajo: this.state.form.numeroLegajo,
         carrera: this.state.form.carrera,
-        materia: [this.state.form.materia],
+        materias: [this.state.form.materias],
       }),
     })
       .then((resp) => resp.json())
@@ -61,7 +61,7 @@ export default class CrearEstudiante extends Component {
       .then((r) => r.json())
       .then((json) => {
         this.setState({
-          materias: json.materias,
+          materiasBox: json.materias,
         });
       });
   }
@@ -70,8 +70,8 @@ export default class CrearEstudiante extends Component {
     return (
       <div>
         <form>
-          <select name="materia">
-            {this.state.materias.map((m) => (
+          <select name="materias" onChange={this.handleChange}>
+            {this.state.materiasBox.map((m) => (
               <option value={m.materia}>{m.materia}</option>
             ))}
           </select>

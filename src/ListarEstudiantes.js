@@ -7,7 +7,7 @@ export default class ListarEstudiantes extends Component {
     this.listarEstudiantes = this.listarEstudiantes.bind(this);
     this.listarEstudiantesPorLegajo =
       this.listarEstudiantesPorLegajo.bind(this);
-    this.numeroLegajo = 0;
+    this.numeroLegajo = 0; //no sirve
     this.state = {
       estudiantes: [],
     };
@@ -24,6 +24,7 @@ export default class ListarEstudiantes extends Component {
   }
   listarEstudiantesPorLegajo() {
     const { numeroLegajo } = this.state;
+    console.log(numeroLegajo);
     fetch("http://localhost:1234/estudiantesId?numeroLegajo=" + numeroLegajo)
       .then((resp) => resp.json())
       .then((json) => {
